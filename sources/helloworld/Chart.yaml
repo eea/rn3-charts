@@ -1,6 +1,7 @@
 apiVersion: v2
 name: helloworld
 description: A Hello World for Helm
+icon: https://raw.githubusercontent.com/eea/rn3-charts/main/sources/helloworld/happyworld.png
 
 type: application
 
