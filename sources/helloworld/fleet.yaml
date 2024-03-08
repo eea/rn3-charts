@@ -21,13 +21,13 @@ helm:
   # The directory of the chart in the repo.  Also any valid go-getter supported
   # URL can be used there is specify where to download the chart from.
   # If repo below is set this value if the chart name in the repo
-  chart: ""
+  #chart: ""
 
   # An https to a valid Helm repository to download the chart from
-  repo: ""
+  #repo: ""
 
   # Used if repo is set to look up the version of the chart
-  version: ""
+  #version: ""
 
   # Force recreate resource that can not be updated
   force: false
@@ -38,7 +38,25 @@ helm:
 
   # Custom values that will be passed as values.yaml to the installation
   values:
-    replicas: 3
-#   service:
-#     type: NodePort
+    replicaCount: 3
 
+    service:
+      type: NodePort
+      port: 80
+
+    ingress:
+      enabled: false
+      annotations: {}
+      hosts:
+        - host: hello.reportnet.europa.eu
+          paths:
+            - path: /
+              pathType: Prefix
+      tls: 
+        - hosts:
+          - hello.reportnet.europa.eu
+  #valuesFrom: []
+  #- secretKeyRef:
+  #    name: password-values
+  #    namespace: fleet-example
+  #    key: values.yaml
