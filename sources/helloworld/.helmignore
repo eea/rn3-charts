@@ -20,3 +20,5 @@
 .idea/
 *.tmproj
 .vscode/
+# Continuous Delivery
+fleet.yaml
