@@ -38,7 +38,7 @@ helm:
 
   # Custom values that will be passed as values.yaml to the installation
   values:
-    replicaCount: 8
+    replicaCount: 3
 
     service:
       type: NodePort
